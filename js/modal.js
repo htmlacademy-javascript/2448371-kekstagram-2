@@ -35,7 +35,7 @@ const showModal = (isShow = true) => {
   }
 };
 
-const renderComments = () => {
+const onLoaderButtonClick = () => {
   const fragment = document.createDocumentFragment();
   localComments.splice(0, COMMENTS_STEP).forEach((comment) => {
     const commentElement = commentTemplate.cloneNode(true);
@@ -65,14 +65,14 @@ export const openBigPicture = (currentPicture) => {
   localComments = [...currentPicture.comments];
   showModal();
   renderModal(currentPicture);
-  renderComments(currentPicture.comments);
+  onLoaderButtonClick(currentPicture.comments);
 };
 
 function hideModal() {
   showModal(false);
 }
 
-loaderButtonTag.addEventListener('click', renderComments);
+loaderButtonTag.addEventListener('click', onLoaderButtonClick);
 closeButtonTag.addEventListener('click', () => {
   hideModal();
   removeEscapeControl();

@@ -1,4 +1,4 @@
-import { updateSlider, reset as resetSlider, init as initSlider,} from './slider.js';
+import { updateSlider, reset as resetSlider, showSlider,} from './slider.js';
 import { EFFECTS } from './сonstants.js';
 
 const effectsTag = document.querySelector('.effects');
@@ -13,7 +13,7 @@ effectsTag.addEventListener('change', ({target}) => {
     return;
   }
   updateSlider(target.value);
-  initSlider();
+  showSlider();
 });
 
 reset();
